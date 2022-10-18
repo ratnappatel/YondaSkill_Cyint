@@ -1,0 +1,283 @@
+
+
+Why OO Programming?
+	They are mainly designed to support creation of Software-Application/Solution much similar like real-time application.
+	
+	
+Real-Time Applications are
+
+1. Food-Delivery Service
+2. Cab Services
+3. E-commerce Application 
+
+They execute realtime process/task. 
+
+Object/s == Real-time Entity
+
+Will carry certain attributes + behaviour = class
+
+A Developer, who develops REAL-TIME Applications...  deal with OOP
+
+
+
+Describe Your-Self : Employee
+
+1. name
+2. post/position
+3. age
+4. DOB
+
+
+
+Banking Domain :  It can function with the group of objects like
+1. Customers	: name,age,dob, address,email,mobile
+2. Employees	: name,age,dob, address,email,mobile
+3. Account		:
+
+
+
+
+
+Naming Convention Rules in Java 
+
+1. For Package : type_organization.short_name_org.
+					com.yskill.bank.account
+2. For Class
+3. For Methods
+
+
+
+
+Access Specifiers:  Used to limit scope of class 
+4. For 
+
+
+Data Types : 
+Float , Double 
+
+For Implying Encapsulation=
+In Java Standards Recommandation says "Always declare attributes as private, so none of other class/methods can directly modifies them"
+
+
+Variable holds In-Memory data during application execution.
+
+Definition: A Named location in memory which stores value/data of specific type.
+
+Syntax to declare a variable 
+
+ACCESS_SPECIFIER MODIFIER NAME_OF_VARIABLE = INITIAL VALUE
+
+WITHIN CLASS / WITHIN  FUNCTION / WITHIN BLOCK OF CODE
+
+According to place of declaration of variable its scope will be decided. 
+
+what groups of Types DataTypes : 
+
+Primitive 		: holds value/data-item 
+Non-primitive 	: It holds memory-address / reference
+
+
+Is the default value given to every variable all the time?
+
+
+*****************************  Methods ***********************************
+
+ Method: a block of code to be called to start its execution.
+ 
+ main : a method which begins execution of code/class which is called by Java Tool of JVM.
+ 
+ Java name_of_class.main
+ 
+ static Modifier : 
+ 
+ Method Syntax
+ 
+ access_specifier modifier return_type[optional] name_method (optional parameter)
+ 
+ {    }
+
+
+access specifier: public, private , protected, package
+modifier : final, static, abstract 
+return_type : 8-primitive datatypes/ Any Object[non-primitive datatype]
+
+
+While One class makes use of other class is called IS-A/HAS-A? relationship between class
+
+Interaction between Objects via method.
+
+Methods are basic medium between two objects of Java
+
+In Java Method parameter can be passed in two different ways
+
+1. Passed by Value		: sending values as parameter == variables
+2. Passed by Reference  : sending reference/address where data is available
+
+
+Java allows Constructor overloading : enables static polymorphism + facilitates creation of object with different state.
+
+this = a hidden instance of the current class but can be used only and only within constructor.
+
+Garbage Collector : a dameon thread runs infinitely within JVM. keep scanning all objects and its references 
+
+Object becomes eligible for garbage collection under below circumstances
+
+1. an object is assigned null explicitly
+2. an object goes out of scope
+3. none-of reference to the object is avialable in memory.
+
+
+
+
+A Pass-by Value technique must be used with business methods which runs independently+ static like Math class methods in Java.lang package
+
+
+@SpringBootApplication annotation is initializing implicitly 
+
+In Java Memory Management is strictly taken care by JVM- a developer cannot manage/execute/refresh memory explicitly. 
+
+private : Java Coding standards+recommandation , all properties/fields/attributes of class must be private in its nature.
+
+
+
+****************************** Day 2 ******************************8
+
+String is a pre-defined class of java.lang package provided to store+manipulate sequence of character.
+
+char = 1character
+
+Java has String Pool to be used for utilizing memory efficiently.
+
+
+"Ratna" "Ratna" == 25 times in memory ==> wastage of memory by storing redundant/identical strings
+
+Think of string data? ==> are they getting modified frequently for any reason ? If yes then declare them as StringBuffer object and not as String object
+
+
+write a method which will reverse a string and display it.
+
+
+
+we have 3 options to create string objects in java
+
+1. String		  : if data are non-modifyable
+2. StringBuffer   : if data are modifyable + multithreaded application
+3. StringBuilder  : if data are modifyable + singlethreaded application
+
+In Java two Objects are identical if they have same hashcode. If two Object has exactly same hashcode they they must be equal/identical.
+
+
+Java program are executed on console[Char-UserInterface] using a command :
+
+java file_name "abc" "xyz" "123" "456" == command line arguments
+
+=============================== Arrays ================================
+
+Arrays: helps in storing homogeneous elements as single variable/object
+
+manipulation / traversal / filteration / becomes easier.
+
+sometime we might want to return multiple values from a function which is quite impossible .
+
+While passing n- arguments we must pass them as array 
+
+
+Develop an applciation which holds/stores details of 100 student[rollno,name,mobile] during execution 
+
+
+Array can be created of primitve types only ? Obviously not ==> we can create an array of Objects[implicit/explicit(user-defined)]
+
+
+Integer, Double, Float, String, Character, Boolean, Byte, Long, Short
+
+
+e1.compareTo(e2);
+e1.id-e2.id =ascending
+e2.id-e1.id=descending
+
+
+
+static modifier: can be used with variable, methods, class, block of code
+
+static class can only be created as inner class
+
+
+
+====================== Relationship between classes =====================
+
+Aggregation : has-a / whole/part helps in code-reusability + modularity 
+
+
+
+
+
+
+
+******************************* Day -3 ***********************************
+
+Inheritance: Code-Reusability, Modify , Expand Is-A relationship Mapping
+
+this = instance of current class
+super = instance of base class
+
+Rule 1: When we implement inheritance parent & child class must have atleast one similar syntaxed constructor.
+
+Rule 2: reference variable of base while pointing to its child object cannot call all methods of child class. It can only call common methods between child-parend
+
+
+Amazon ==> Manufecturer announce some discount from your end- too.
+if amazon declares sale ==> manuf must allow some discount too
+ 
+Diwali Festival : announce sale over all products but limited to discount
+
+
+It all depends on type of product 
+
+Book : 5%
+Electronics : 8% [TV = 9%, Mp3Player = 11%]
+
+I want to order a product tell me how much is discount on it? ==> which product ==> Electrnics ? ==>  
+
+
+
+In Java : To test any class independently it must contain a main method like below only:
+
+public  static void main(String arg[])
+
+
+
+
+Abstract : can be used with class & method
+
+	when developer want to impose certain behaviour/ feature/method/function  must be available in its child class without fail then they can declare it as abstract method.
+
+
+
+
+
+Mario : 
+
+First Execution: Basic Mario
+basic Mario ==> Super Mario ==> Aqua Mario ==> 
+
+
+Mario  = mario
+	SuperMario =mario=new SuperMario()
+	AquaMario =mario=new AquaMario()
+	
+	
+	
+Polymorphism : is to have multiple form of same behaviour[methods]/object
+
+	can be implemented in two way : static[Compile-Time], dynamic[Run-time]
+
+Static Polymorphism : during compilation, a compiler should be able to map form of a method to its execution.
+
+authenticate as valid passanger : 1. physical ticket, 2. Message from Agent, 3. soft-copy of your tickets
+
+
+
+Dynamic Polymorphism : during runtime JVM may converts an object to its child type. 
+
+
+

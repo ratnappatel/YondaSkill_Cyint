@@ -1,7 +1,6 @@
 package com.yskill.arrays;
 
 public class Employee implements Comparable<Employee>{
-	
 	private int id;
 	private String name;
 	private double salary;
@@ -48,7 +47,7 @@ public class Employee implements Comparable<Employee>{
 
 	@Override
 	public int compareTo(Employee o) {
-		
+		//Employee e1=(Employee)o;
 		return this.id-o.id;
 	}
 
