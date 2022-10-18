@@ -275,9 +275,51 @@ Static Polymorphism : during compilation, a compiler should be able to map form 
 
 authenticate as valid passanger : 1. physical ticket, 2. Message from Agent, 3. soft-copy of your tickets
 
+Calculator: 
+Do The Total : 1. ints 2. ints & floats 3. floats & doubles 4. int & doubles
 
+
+add() method==> should be able to perform addition on any type of numeric [decimal,number] = 4
+
+
+Cash-Deposit-Machine: 
+
+deposit(2000?,500?,100?) => total amount which we are trying to deposit
+
+
+========================================================================
 
 Dynamic Polymorphism : during runtime JVM may converts an object to its child type. 
+
+
+=======================================================================
+Generics ?:
+
+means parameterized types.
+Using generics we can apply parameterized type to class/interface/method. It also allow creation classes that work with different data types. and those classes/interface/method are called generic type.
+
+<T>
+
+Why ? 
+
+Thumb Rule : Every single class in java has one defualt base class to it 
+Object.
+
+Because Object class reference variable can point to any object it lacks type safety
+
+Base b1=new Child()
+
+
+
+After storing/ adding/entering data as object in runtime application, when try to read it back JVM will only provide it as Object type 
+
+
+Generic Function can also be created if the function is not manipulating data [only presenting data as they are received without modifying]
+
+
+
+
+
 
 
 
