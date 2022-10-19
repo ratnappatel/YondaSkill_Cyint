@@ -316,10 +316,130 @@ After storing/ adding/entering data as object in runtime application, when try t
 
 Generic Function can also be created if the function is not manipulating data [only presenting data as they are received without modifying]
 
+*********************  Day 4 ************************************
+Final Modifier : can be used with variable, method, class. 
+	
+1. Final Variable : Once initialized we cannot modify/change/replace its value
+
+
+In E-Commerce application sizes for any product like shoes, apparel can be declared as final 
+
+final int small=30cm
 
 
 
+2. Final Method :  Once declare a method as final, non of its child class can override it.
+
+In an application when we needed to define a generic behaviour which must be used as it is defined by all of its child type. 
+
+class HRManager{void calcSalary(), void approveLeave(), }
+class ProjectManager{void approveLeave()}
 
 
 
+3. Final Class :  none of other classes can inherit from a final class. helps in creating an Immutable class definition like String .
+
+
+To Create a class as Immutable : 
+	1. class must be declared Final
+	2. All fields of the class must be declared private & final
+	3. All private fields must be initialized via argument constructor deep-copy
+	4. must have getters for all private field 
+
+
+Programming Framework : 
+Spring --> Application Framework [IOC - runtime container]
+Struts --> Web-Framework can be used at UI-layer development[]
+Hibernate --> ORM Framework can be used to manage Database Interaction[SessionFactor]
+
+============================  Object Class ========================
+
+if(Object1 == Object2)
+
+Everything what we see except primitive data types is an Object in Java.
+Every Java class is by-default a child of Object class 
+
+toString() : is used to represent/display Object[data/state stored in an object] 
+
+When an Object is passed as an argument to println method, It will call toString function.
+
+By default returns fullyQualifiedClassName@HexaString(hashCode)
+
+boolean equals(Object o2) : o1.equals(o2) ==> default behaviour of equals is to compare two objects by looking at its hashCode value
+
+ITS MANDATORY TO OVERRIDE HASHCODE METHOD AS WELL WHILE OVERRIDING EQUALS METHOD
+
+
+int hashCode() : must return same hashcode for two identical/equal objects
+If two Objects are identical then they must have same hashcode
+
+
+
+Compare Objects, search an Object , Sort Objects
+
+
+
+============================== Wrapper Classes ========================
+
+Data structures in Java has been implemented as pre-defined classes. They are available as Collections API.  Collections classes can store elements as Object only and not allow to store any primitive value.
+
+
+
+int id=101 ==> LinkedList ==> int id--> new Integer(101)
+
+Prior to JDK 1.5 developer has to explicitly convert primitive values to wrapper object prior adding them in collection.
+
+
+ASCII of character : A - 65
+
+
+============================ Abstract + Interface =====================
+
+Abstract modifier can be used with method, class
+
+Abstract Method:  can not define its body. Cannot contain definition 
+
+Abstract Class: is a class which must contain at-least one abstract method. and can have any no.of concrete methods. We can-not create an instance of abstrcat class. 
+
+
+All the abstract method of abstrcat class MUST BE OVERRIDEN BY ITS CHILD CLASS. If the child class does not override  abstract method then it also becomes an abstract.
+
+
+
+ABSTRACT is to enforce a java class to have certain behaviour mandatorily
+
+
+Vending Machine: Tea, Coffee , Milk, Flavoured Milk [Beverages]
+
+Interface : 
+Use 1 : is a collection of abstract methods[all methods are by default   abstract + public ] till JDK 1.7. From JDK 1.8 onwards Interface can also contain concrete methods[default/static].
+
+Instance of an interface can-not be created.
+
+All the property/fields declared within interface are by default public+static+final
+
+
+Use 2: Interface helps in providing encapsulation over actual class implementation. Abstraction over implementation.
+
+
+
+static Method: make method available without creating an object of the contained class.
+
+
+final Method: cannot be overriden by child class of the contained class
+
+
+static var : shared copy between multiple[n] object of the class
+Final var : non-modifyable 
+
+
+============================ Functional Interface =======================
+
+Functional Interface : is an interface which container exactly one[--only one] abstract method. They are also called sometime as SAM-Interface.
+
+Lambda Expression : helps to reduce anonymous class creation.
+
+  (method - arguments ) -> {logic of method /return something}
+
+Lambda-Expression helps in reducing complexity of overriding single abstract method. and reduce the code size to maximum possibility.
 
