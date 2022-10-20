@@ -13,8 +13,7 @@ public class CalculatorOverriden  implements DivideInterface{
 	public void divide(int no1, int no2) {
 		System.out.println("In divide");
 		
-	}
-	
+	}	
 	/*
 	 * public void display() { System.out.println("Display overriden"); }
 	 */
