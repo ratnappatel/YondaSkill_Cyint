@@ -443,3 +443,78 @@ Lambda Expression : helps to reduce anonymous class creation.
 
 Lambda-Expression helps in reducing complexity of overriding single abstract method. and reduce the code size to maximum possibility.
 
+
+
+*********************** Collection Framework ***************************
+
+Data structures to manage bulk data[big amount of data] in-memory[during execution of code]
+
+c, c++ : require developer to handle creation of these data-structures. 
+
+Java : it has created all basic[most-required] data structure and provided to be used readily by Java-Developers.
+
+java.util : is a collection of classes+interfaces to deal/work with any kinds of data-structure.
+
+Collection Framweork : is provided as class+interface hierarchy. Is divided in 3-flavours/category
+
+Algorithms: are provided by pre-defined classes in java.util package as methods
+
+1. List : is used to create collection in which we bother/expect their
+		  insertion order is maintained. [allow duplicate elements]
+		  3-Implementation classes:  ArrayList, LinkedList, Vector
+		  
+		  ArrayList : Ordered List as resizable array. but can traverse in forward only direction.== singly-linkedlist ==> SingleThreadedApplication.
+		  
+		  Real-Time Example : passportsevakendra online, Bank Offices tokens
+		  
+		  LinkedList : Ordered list allowing traversal in both direction. each element is linked with its previous element.= Doubly-linkedList
+		  
+		  Browser history, Music-apps => playlist,.....
+		  
+		  Vector : is a synchronized version of ArrayList. ==> MultiThreaded Application
+		  
+		  Memory Management in Runtime Environments
+		  
+2. Set	:  Unique elements collections.
+			HashSet : creating unique collections and not follows any ordering of elements[store elements in random sequence.]
+			
+			Java uses HashSet to create list of object during runtime.
+			Developing cart object in e-commerce application
+			
+			TreeSet : creating unique collections. store elements in sorted order by-default.
+			
+			Online Library.
+			
+			LinkedHashSet : Unique Collection + store elements in insertion-order
+			
+			udemy , movies , 
+			
+			Using Stream API we can sort set collection
+
+3. Map   : 
+
+
+
+___________________________________________________________
+Disadvantage:
+If base reference of collection interface is used to create collection then we cannot use all specialized method of collection class.
+
+Advantage:
+It helps in converting same reference variable to any other collection type[can perform dynamic polymorphism]
+
+
+Natural Ordering : In Java all primitives+Strings are considered as Natural data. Hence Natural Ordering will sort this data in ascending by default int,long,short,byte,double,float,boolean,char, String 
+
+JDK 5.0 onwards int=Integer
+
+To check equality of Objects Java calls equals method which compares hashCode values of object 
+
+Check equality of Objects : override equals + hashCode methods
+Check which Object falls first in sorting : override compareTo method by implementing Comparable Interface.
+
+Lambda Expression to override compare method of Comparator interface of java.util package
+
+
+
+
+

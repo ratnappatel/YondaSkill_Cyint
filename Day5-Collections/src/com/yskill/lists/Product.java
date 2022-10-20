@@ -3,6 +3,7 @@ package com.yskill.lists;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.Objects;
 
 public class Product implements Comparable<Product>{
 	
@@ -52,38 +53,29 @@ public class Product implements Comparable<Product>{
 	public int compareTo(Product p) {
 		
 		//return this.id-p.id;
-		return this.title.compareTo(p.title);
+		//return this.title.compareTo(p.title);
+		return (int) (this.price-p.price);
 	}
 	
-	public static void main(String[] args) {
-		// List of Custom-Objects
-		
-		ArrayList<Product> products=new ArrayList<Product>();
-		products.add(new Product(23, "Keyboard", 2300.78, 4));
-		products.add(new Product(63, "LED Screen", 7850.99, 5));
-		products.add(new Product(17, "Mother Board", 15000.25, 3));
-		products.add(new Product(72, "RAM", 4500.57, 3));
-		products.add(new Product(81, "ROM", 7353.83, 2));
-		products.add(new Product(39, "External Hard Disk", 3999.19, 4));
-		
-		System.out.println(products);
-		
-		System.out.println("Sorted Product List");
-		Collections.sort(products); //?
-		System.out.println(products);
-		
-		Iterator<Product> itr=products.iterator();
-		while(itr.hasNext())
-		{
-			System.out.println("=======================================");
-			Product p=itr.next();
-			System.out.println("Product Id : "+p.getId());
-			System.out.println("Product Title : "+p.getTitle());
-			System.out.println("Product Price : "+p.getPrice());
-			System.out.println("Product Rating : "+p.getRating());
-		}
-
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, price, rating, title);
 	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		return id == other.id && Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price)
+				&& rating == other.rating && Objects.equals(title, other.title);
+	}
+	
 
 	
 	
