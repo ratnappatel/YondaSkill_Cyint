@@ -59,22 +59,16 @@ public class Product implements Comparable<Product>{
 	
 	
 	
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, price, rating, title);
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Product other = (Product) obj;
-		return id == other.id && Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price)
-				&& rating == other.rating && Objects.equals(title, other.title);
-	}
+	
+	  @Override public int hashCode() { return Objects.hash(id, price, rating,
+	  title); }
+	  
+	  @Override public boolean equals(Object obj) { if (this == obj) return true;
+	  if (obj == null) return false; if (getClass() != obj.getClass()) return
+	  false; Product other = (Product) obj; return id == other.id &&
+	  Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price) &&
+	  rating == other.rating && Objects.equals(title, other.title); }
+	 
 	
 
 	

@@ -19,6 +19,8 @@ public class ProductsArrayList {
 		
 		System.out.println(products);
 		
+		Product prd=new Product(81, "ROM", 7353.83, 2);
+		System.out.println("A Product ROM is available : "+products.contains(prd));
 		System.out.println("Sorted Product List");
 		Collections.sort(products); //?
 		System.out.println(products);
@@ -33,6 +35,8 @@ public class ProductsArrayList {
 			System.out.println("Product Price : "+p.getPrice());
 			System.out.println("Product Rating : "+p.getRating());
 		}
+		
+		
 
 	}
 

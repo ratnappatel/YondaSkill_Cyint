@@ -491,10 +491,21 @@ Algorithms: are provided by pre-defined classes in java.util package as methods
 			
 			Using Stream API we can sort set collection
 
-3. Map   : 
+3. Map   :  Stores elements as key=value pair. 
 
+			HashMap			: creates simple key=value based collection.
+			
+			TreeMap			: creates k=v collection by keys stored in 
+							  sorted sequence implicitly[if they are 
+							  primitives]
+							  
+			LinkedHashMap	: creates k=v collection by keys stored in 
+							  insertion ordered sequence implicitly[if they are primitives] 
+							  
+		We can use custom object as key. if the key is custom object then we must define comparison logic + sorting logic in object definition.
 
-
+Key : 8-primitive + String + CustomObject
+Value: 8-primitive + String + CustomObject
 ___________________________________________________________
 Disadvantage:
 If base reference of collection interface is used to create collection then we cannot use all specialized method of collection class.
@@ -513,6 +524,54 @@ Check equality of Objects : override equals + hashCode methods
 Check which Object falls first in sorting : override compareTo method by implementing Comparable Interface.
 
 Lambda Expression to override compare method of Comparator interface of java.util package
+
+
+
+Create a POJO for author and design a TreeSet  + LinkedList collection of it
+
+print all these collectins in ascending+descending order  with atleast 10 elements.
+
+
+
+----------------------------Sorting of Collection's Objects---------------
+
+1. Comparable Interface : It can sort data with exactly one logic at a time ==> Override compareTo(Object o2)
+
+
+2. Comparator Interafce: It can allow to define multiple sorting logic.
+==> compare(Object o1,Object o2)
+
+
+**************** Map Collection Interface **********************
+
+Map : is an interface which provides key=value pair collection to be created.
+case-number = case-status
+CNR-number= case-status
+
+Real-Time Example : passport , e-aadhar , juridical-applications provides an UI-interface  to find information about.
+ 
+Passport-number = Processing/VerificationInProgress
+243546= VerificationInProgress
+846633= VerificationInProgress
+
+
+
+Banking application : its mandatory to link an aadhar-->PAN Card number.
+class [aadhar_card+pan_card] : new Person()
+
+Practice Assignment 
+To Sort HashMap based on keys:
+
+1. Conver hashmap ==> treemap
+2. readKeys ==> set ==> stream.sorted()
+3. readKey ==> TreeSet [get sorted implicitly]
+
+
+sort method(comparator argument)=> converting existing map to sorted by different field = after insertion they gets sorted.
+
+While creating map ==> sorting logic then map will sort elements during insertion.
+
+
 
 
 

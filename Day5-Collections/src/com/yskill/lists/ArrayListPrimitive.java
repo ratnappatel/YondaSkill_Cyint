@@ -39,6 +39,9 @@ public class ArrayListPrimitive {
 			if(element%2==0)
 				System.out.println(element);
 		}
+		
+		System.out.println("25 is available  "+al.contains(25)); //searching specified element[Object]
+		
 	}
 
 }
