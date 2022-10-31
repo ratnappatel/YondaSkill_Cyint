@@ -30,7 +30,7 @@ public class Application  implements CommandLineRunner{
 		try {
 			LoginDTO loginDto=new LoginDTO();
 			loginDto.setUserId("ratna");
-			loginDto.setPassword("ratna123");
+			loginDto.setPassword("ratna@123");
 			
 			String result=controller.authenticateCustomer(loginDto);
 			LOGGER.info(env.getProperty(result));
