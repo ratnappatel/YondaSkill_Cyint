@@ -15,6 +15,7 @@ import com.yskill.service.LoginServiceImpl;
 @ComponentScan(basePackages="com.yskill.service com.yskill.repository")
 @PropertySource("classpath:messages.properties")
 public class SpringConfig {
+	
 	@Bean
 	public LoginRepository loginRepository() {
 		return new LoginRepositoryImpl();
