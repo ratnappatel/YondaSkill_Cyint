@@ -9,23 +9,22 @@ import javax.persistence.Table;
 
 public class Customer {
 	
-	@Id
-	
-	private String id;
+	@Id	
+	private String loginid;
 	@Column(name="password")
 	private String password;
 	public Customer() {
 	}
 	public Customer(String loginId, String password) {
 		super();
-		this.id = loginId;
+		this.loginid = loginId;
 		this.password = password;
 	}
 	public String getId() {
-		return id;
+		return loginid;
 	}
 	public void setLoginId(String loginId) {
-		this.id = loginId;
+		this.loginid = loginId;
 	}
 	public String getPassword() {
 		return password;
@@ -35,7 +34,7 @@ public class Customer {
 	}
 	@Override
 	public String toString() {
-		return "Customer [loginId=" + id + ", password=" + password + "]";
+		return "Customer [loginId=" + loginid + ", password=" + password + "]";
 	}
 	
 	
