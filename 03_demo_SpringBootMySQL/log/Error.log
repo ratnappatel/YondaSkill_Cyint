@@ -1,0 +1,17 @@
+22/11/01 10:04:41 [INFO ] - Starting Application using Java 17.0.1 on DESKTOP-DAG7T30 with PID 16900 (C:\Users\ratna\git\YondaSkill_Cyint\03_demo_SpringBootMySQL\target\classes started by ratna in C:\Users\ratna\git\YondaSkill_Cyint\03_demo_SpringBootMySQL)
+22/11/01 10:04:41 [INFO ] - No active profile set, falling back to 1 default profile: "default"
+22/11/01 10:04:41 [INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22/11/01 10:04:41 [INFO ] - Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interfaces.
+22/11/01 10:04:42 [INFO ] - HikariPool-1 - Starting...
+22/11/01 10:04:42 [INFO ] - HikariPool-1 - Start completed.
+22/11/01 10:04:43 [INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+22/11/01 10:04:43 [INFO ] - HHH000412: Hibernate ORM core version 5.6.12.Final
+22/11/01 10:04:43 [INFO ] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+22/11/01 10:04:43 [INFO ] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+22/11/01 10:04:44 [INFO ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22/11/01 10:04:44 [INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+22/11/01 10:04:44 [INFO ] - Started Application in 4.33 seconds (JVM running for 5.249)
+22/11/01 10:04:44 [ERROR] - Wrong Credentials.. TRY AGAIN LATER.
+22/11/01 10:04:44 [INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
+22/11/01 10:04:44 [INFO ] - HikariPool-1 - Shutdown initiated...
+22/11/01 10:04:44 [INFO ] - HikariPool-1 - Shutdown completed.
