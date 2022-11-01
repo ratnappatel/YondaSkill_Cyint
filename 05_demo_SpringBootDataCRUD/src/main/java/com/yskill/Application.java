@@ -26,10 +26,14 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		this.add();
+		//this.add();
 		this.getAllStudent();
-		System.out.println("====================================");
+		//System.out.println("====================================");
 		this.getStudentDetails();
+		System.out.println("====================================");
+	
+		StudentDTO s=controller.getStudentByName("Uttam");
+		LOGGER.info(s);
 	}
 	
 	public void add()

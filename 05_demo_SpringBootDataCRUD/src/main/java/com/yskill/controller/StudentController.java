@@ -31,4 +31,8 @@ public class StudentController {
 		return service.getStudentDetails(rollno);
 	}
 
+	public StudentDTO getStudentByName(String name)
+	{
+		return service.findStudentByName(name);
+	}
 }

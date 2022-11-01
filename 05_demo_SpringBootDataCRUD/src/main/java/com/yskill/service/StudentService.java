@@ -13,5 +13,6 @@ public interface StudentService {
 	public StudentDTO getStudentDetails(int rollno) throws StudentException;
 	public StudentDTO updateStudentDetails(int rollno,StudentDTO s);
 	public String deleteStudent(int rollno);
+	public StudentDTO findStudentByName(String name);
 
 }

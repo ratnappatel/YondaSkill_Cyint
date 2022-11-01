@@ -66,7 +66,10 @@ public class StudentServiceImpl implements StudentService{
 			s1=this.getStudentDTO(s);
 		}
 		else
+		{
+			System.out.println("Enter Rollno does not exists");
 			throw new StudentException("Student with Rollno : "+rollno+" does not exists");
+		}
 		return s1;
 	}
 
@@ -80,5 +83,12 @@ public class StudentServiceImpl implements StudentService{
 	public String deleteStudent(int rollno) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public StudentDTO findStudentByName(String name) {
+		Student s=repository.findByName(name);
+		
+		return this.getStudentDTO(s);
 	}
 }
