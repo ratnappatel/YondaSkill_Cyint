@@ -13,6 +13,7 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
+	
 	public String authenticateCustomer(LoginDTO loginDto)throws LoginException
 	{
 		//loginService=new LoginServiceImpl();
