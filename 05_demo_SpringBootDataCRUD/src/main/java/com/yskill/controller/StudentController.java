@@ -35,4 +35,14 @@ public class StudentController {
 	{
 		return service.findStudentByName(name);
 	}
+	
+	public StudentDTO updateStudentDetails(int rollno, StudentDTO s)
+	{
+		return service.updateStudentDetails(rollno, s);
+	}
+	
+	public String removeStudent(int rollno)throws StudentException
+	{
+		return service.deleteStudent(rollno);
+	}
 }

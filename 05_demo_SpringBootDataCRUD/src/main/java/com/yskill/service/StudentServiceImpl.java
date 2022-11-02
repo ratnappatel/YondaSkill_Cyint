@@ -75,14 +75,19 @@ public class StudentServiceImpl implements StudentService{
 
 	@Override
 	public StudentDTO updateStudentDetails(int rollno, StudentDTO s) {
-		// TODO Auto-generated method stub
-		return null;
+		Student st=repository.findById(rollno).get();
+		st.setName(s.getName());
+		st.setStream(s.getStream());
+		repository.save(st);
+		return this.getStudentDTO(st);
 	}
 
 	@Override
-	public String deleteStudent(int rollno) {
-		// TODO Auto-generated method stub
-		return null;
+	public String deleteStudent(int rollno) throws StudentException{
+		Optional<Student> optionalStudent=repository.findById(rollno);
+		Student st=optionalStudent.orElseThrow(()->new StudentException("Student with given Rollno does not exists"));
+		repository.delete(st);
+		return "success";
 	}
 
 	@Override

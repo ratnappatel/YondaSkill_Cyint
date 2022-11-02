@@ -29,11 +29,19 @@ public class Application implements CommandLineRunner {
 		//this.add();
 		this.getAllStudent();
 		//System.out.println("====================================");
-		this.getStudentDetails();
+		//this.getStudentDetails();
 		System.out.println("====================================");
 	
-		StudentDTO s=controller.getStudentByName("Uttam");
-		LOGGER.info(s);
+		//StudentDTO s=controller.getStudentByName("Uttam");
+		//LOGGER.info(s);
+		this.update();
+		try {
+			controller.removeStudent(6);
+			
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		}
+		
 	}
 	
 	public void add()
@@ -61,5 +69,12 @@ public class Application implements CommandLineRunner {
 			LOGGER.error(e.getMessage());
 		}
 		LOGGER.info(s);
+	}
+	
+	public void update()
+	{
+		StudentDTO s=new StudentDTO(3, "Varniraj", "MicroBio");
+		s=controller.updateStudentDetails(s.getRollno(), s);
+		LOGGER.info("Student Details Updated Successfully.."+s);
 	}
 }

@@ -12,7 +12,7 @@ public interface StudentService {
 	public List<StudentDTO> getAllStudent();
 	public StudentDTO getStudentDetails(int rollno) throws StudentException;
 	public StudentDTO updateStudentDetails(int rollno,StudentDTO s);
-	public String deleteStudent(int rollno);
+	public String deleteStudent(int rollno) throws StudentException;
 	public StudentDTO findStudentByName(String name);
 
 }
