@@ -19,6 +19,7 @@ public class Application implements CommandLineRunner {
 	private static final Log LOGGER=LogFactory.getLog(Application.class);
 	@Autowired
 	private StudentController controller;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
