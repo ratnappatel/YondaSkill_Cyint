@@ -9,5 +9,8 @@ public interface EmployeeService {
 	
 	public List<Employee> getAllEmployee();
 	public Employee getEmployee(int id) throws EmployeeException;
+	public int addEmployee(Employee e);
+	public Employee updateEmployeeDetails(int id,Employee e)throws EmployeeException;
+	public String deleteEmployee(int id)throws EmployeeException;
 
 }
