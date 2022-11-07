@@ -3,6 +3,8 @@ package com.yskill.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,33 +27,53 @@ public class EmployeeAPI {
 	
 	//service Endpoint
 	@GetMapping("/emps")	
-	public List<Employee> getAllEmployee()
+	public ResponseEntity<List<Employee>> getAllEmployee()
 	{
-		return service.getAllEmployee();
+		List<Employee> emps=(List<Employee>)service.getAllEmployee();
+		ResponseEntity<List<Employee>> response=new ResponseEntity<>(emps,HttpStatus.OK);
+		return response;
 	}
 	
 	@GetMapping("/emps/{id}")
-	public Employee getEmployee(@PathVariable("id")Integer id)throws EmployeeException
+	public ResponseEntity<Object> getEmployee(@PathVariable("id")Integer id)
 	{
-		return service.getEmployee(id);
+		Employee e=null;
+		try {
+			e = service.getEmployee(id);
+		} catch (EmployeeException e1) {
+			return new ResponseEntity<>(e1.getMessage(),HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(e,HttpStatus.OK);
 	}
 
 	@PostMapping("/emps")
-	public String addEmployee(@RequestBody() Employee e)
+	public ResponseEntity<String> addEmployee(@RequestBody() Employee e)
 	{
 		int id=service.addEmployee(e);
-		return "Employee details added with an id : "+id;
+		return new ResponseEntity<>("Employee details added with an id : "+id,HttpStatus.OK);
 	}
 	
 	@PutMapping("/emps/{id}")
-	public Employee updateEmployee(@PathVariable("id")Integer id,@RequestBody Employee e)throws EmployeeException
+	public ResponseEntity<Object> updateEmployee(@PathVariable("id")Integer id,@RequestBody Employee emp)
 	{
-		return service.updateEmployeeDetails(id, e);		
+		Employee e=null;
+		try {
+			e = service.updateEmployeeDetails(id, emp);
+		} catch (EmployeeException e1) {
+			return new ResponseEntity<>(e1.getMessage(),HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(e,HttpStatus.OK);		
 	}
 	
 	@DeleteMapping("/emps/{id}")
-	public String removeEmployee(@PathVariable("id")Integer id)throws EmployeeException
+	public ResponseEntity<String> removeEmployee(@PathVariable("id")Integer id)
 	{
-		return service.deleteEmployee(id);
+		String msg="";
+		try {
+			msg = service.deleteEmployee(id);
+		} catch (EmployeeException e1) {
+			return new ResponseEntity<>(e1.getMessage(),HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(msg,HttpStatus.OK);	
 	}
 }

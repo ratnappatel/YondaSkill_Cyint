@@ -23,8 +23,8 @@ public class Application implements CommandLineRunner {
 		//this.addEmployee();
 		//this.getEmployees();
 		//this.updateEmployeeDetails();
-		this.deleteEmployee();
-		this.getEmployees();
+		//this.deleteEmployee();
+		//this.getEmployees();
 		
 	}
 	
