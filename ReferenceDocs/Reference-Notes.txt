@@ -573,6 +573,420 @@ While creating map ==> sorting logic then map will sort elements during insertio
 
 
 
+===========================Service Layer Using ==========================
+
+Type of Applications are :
+
+1. Monolithic  : Contains all application logic as single Program/been 
+				 executed in single environment.
+2. Two-Tier / Client-Server
+3. Multi-Tier / EnterPrise 
+
+
+To build a Service Layer of an Enterprise Application we need to develop an application which will handle Login functionality.
+
+1. Accept Credential : UserInterface ==> Console-Based [only the class which will carry a main method] hence it's called as an entry point of application.
+
+2. Read-Input ->Pass it to Service layer  : Controller [which handles the flow of an application] ==> JavaProgram[without main function]
+
+3. ServiceImplementation : contains actual business logic of an application.
+
+4. PersistenceLayer : Repository ==> Java class which contains data/hold the data reded from database.
+
+5. Data-TransferObject DTO: a simple Java POJO class which will hold the data and transfers them back-forth.
+
+
+1. UserInterface : A Java class[with Main]
+2. Controller : LoginController[A Java Class ]
+3. LoginServiceImpl : A Java [may add interface to implement abstraction layer]
+4. LoginRepository : contains actual data [act as database+Interface]
+
+
+
+
+To Build any applciation we may follow development approach.
+
+1. Top-Down approach
+2. Bottom-up approach
+
+is a way of developing application following UI-Layer--> ServiceLayer -->PersistenceLayer
+
+PersistenceLayer --> ServiceLayer --> UI-Layer.
+
+Service ==> Repository
+
+
+To Convert an java-application to spring based application we have to develop maven-project and add Spring framework as maven-dependency so that we can use spring annotations/classes/interfaces to make our Enterprise applicationd evelopment easier+faster+less-Configuration code
+
+
+
+Dependency: 
+
+Loosely-coupled : they can be re-used & becomes Unit-Testable==> TDD
+Tightly-coupled : they require other class to be avialable during testing hence TDD is not possible with this kinds of applications.
+
+
+
+Spring Framework : Advantages
+
+1. Dependency Management with less/no need of configuraing
+	Spring uses its core container called IOC which creates required Objects of class for another class and pass them as Dependency using Dependency-Management technique.
+	
+	Inversion-Of-Control is a feature [DI]of Spring-Framework
+	
+2. Dependency-Management: can be done by configuration. Spring follows multiple ways of configuration
+	a. XML-Based Configuration: proven to error-prone 
+	b. Java-Based Configuration
+	c. Annotation-Based Configuration	
+	
+	
+	Every Java class of Spring-based application must be configured using any of given annotation:
+	@Configuration, @Bean, @Repository, @Component, @Controller
+	@Bean : A generic annotation can be given to any Java class
+	@Configuration : can be given to the class which contains logic of dependency-management[]
+	
+
+
+Maven : Is a build tool to manage required dependencies[JARs] for a project. 
+
+
+
+How to Configure Spring application which manages dependencies through IOC container.
+
+
+Properties file : collection of key=value data. which may database configuration details/ credentials to connect with DB/ messages
+
+
+JRE == IOC -  Container[an application written in java to manage dynamic creation of objects during runtime]
+
+
+
+
+************************** Service Layer Using Spring ********************
+
+Spring Bean's Life Cycle Methods to interact with IOC container during instantiation of bean instace.
+
+
+
+Spring Annotation-Based Configuration : 
+
+Autowiring: When IOC container inject the dependencies into dependent bean class WITHOUT DEFINING IN CONFIG class is a feature called Autowiring.
+
+
+Autowiring can be used with @Autowired annotation marked to PROPERTIES OF BEAN.
+Autowiring can be used with @Autowired annotation marked to setter methods.
+Autowiring can be used with @Autowired annotation marked to constructor methods.
+
+
+
+With Spring Boot project it will not require any config file iIF WE FOLLOW " STANDARD PROJECT DIRECTORY STRUCTURE "
+
+
+
+Connecting Spring application to backend database.
+
+1. Any Database instance 
+2. Add driver dependency in pom.xml
+3. Configure DB-Connection ==> URL , useName, Password, dialect [.properties]
+
+4. add Respository [pre-defined CrudRepository, JpaRepository]
+
+
+Using Spring Boot we can develop spring application with DB-Connectivity without writting single line of configuation+JDBC logic.
+
+
+Stand-alone vs Web-Application
+
+
+
+Spring-Boot application can be created as :
+
+1. Spring starter project
+2. Using Sprint Initializer
+3. Create Maven-Project and add Spring-boot-starter
+
+1. Stand-Alone     :  are the application run locally to the system
+2. Web-Application :  always require server connection. Are available 24*7*365 days  on any platform/device
+
+For WebApplication servers are providing Runtime Environment on which they can be managed via server itself.
+
+Web-Hosting : GoDaddy
+
+Spring Boot consists of embedded server, No need for XML-based Configuration[which is intern an error prone]
+
+@SpringBootApplication = 
+@Configuration[default to application.properties] + 
+@ComponentScan [default to all sub-packages of SpringBootApplication class]+ 
+@EnableAutoConfiguration[== used to avoid need of SpringConfig file]
+
+
+Every Physical server there are a log files getting generated everyday which is consisting of each information[metadata] of client whose request been processed.
+
+Log-Files: text based files stores application/server information. Logging Technique 
+
+
+***************************** Spring Boot *****************************
+An Enterprise Application is a collection of n-Entities
+
+Entity[Living] : Customer, Employee, Supplier, User 
+Entity[Non-Living] : Product, Order, Account, Transaction, Group
+
+
+E-Commerce Application: Customer, Product, Order, Supplier
+
+Spring Boot : Always consider each Table as Seperate Entity and design its repository.
+
+
+Spring Boot : Stand-Alone CRUD application. Hibernate is the default ORM framework for Spring Boot Application.
+
+
+Dialect class : used to generate SQL syntax according to underlying database [& version specific too].
+
+==================== Logging  in Spring Boot ========================
+
+Spring Boot uses Apcahe Commons Logging for logging mechanism implicitly.
+If a developer need to use other Logging APIs/Libraries then developer has to Override default configuration.
+
+
+What is Logging? : is a way to print[console]/store[file] Application's information such as. Info / Error / Debug / Warning / FATAL
+Based on Type of an Information they are categorized as :
+
+INFO, ERROR, WARN, FATAL, DEBG ==> Logging LEVEL Which can be configured
+
+
+To Use Log4j API for Logging in Spring Boot application. developer have to create seperate configuration file named "log4j2.properties"
+
+
+=====================  CRUD in Spring Boot =========================
+Twitter : performs all CRUD operation in the form of 
+
+Create : create new User-Account
+Read   : Login/browse twits on our home page 
+Update : Modify/change email/mobile-no of user OR Change profile pic of 
+	     a user
+Delete : delete an account of a particular user
+
+E-Commerce : Also performs CRUD operation
+
+Create : place new order [internally creates new Order object]
+Read   : check - Status of an order
+Update : Modify/change delivery-Address/ Payment-mode
+Delete : Order Cancellation
+
+
+We can let Spring - boot application to create Database+Tables on behalf of developer. For which we will us eSpring Boot Data API.
+
+
+select max(rollno)+1 from students
+
+
+When data need to be trasfered between Back-end to Front-End must have simple form of Object and not as any specialized object
+
+
+
+Java : POJO [no entity]
+React/Angular : POJO ==> JSON Object
+
+Spring Data JPA API : provides a feature called Query By Method Name.
+Generates dynamic query based on method naming
+
+
+=============== Mapping in ORM Layer of Spring Boot Application  =========
+
+1. OneToMany : 
+2. ManyToOne : 
+3. ManyToMany [1 & 2]
+4. OneToOne : 
+
+
+Customer[fk-child]  ==  Address[pk] [In which domain they would be used?]
+Ratna -> OneToOne ==> iMobile, e-Aadhar
+Kiran -> OneToMany  ==> E-Commerce,Food DeliveryServices
+Liketh --> ManyToOne ==> CommunityBased[Shaddi.com]
+
+
+Employee == Department 
+ManyToOne 
+Uni-directional
+Bi-directional 
+
+
+SAM --> 20 ProjectManager
+SAM --> 40 SeniorArchitect
+
+40 --> SAM, Rahul, Reena, Iliyaz
+
+
+
+
+************************ REST-API Module ***************************
+
+
+API : a service provided by an application which can be utilized by any third-party application.
+
+For Example : Uber, Ola, Rapido are the cab/auto rental service application requires GPS ==>Importing[Consuming] as third party API service provided by GOOGLE.
+
+API Service: can be consumed by any application developed/running on any technology/device.
+
+Hence while developing API/service, developer must consider cross-platform/cross-technology support to be provided.
+
+Java : int,long,double,float
+Node+Expres : Number
+
+Any programming language has a core/basic unit of code is called as: 
+
+	{int a=20,b=5,c=0
+	c=a/b;
+	sysout(result:c)}
+	
+	Method ==> specifier modifier return_type method_name(optional argument)
+
+
+c programming ==> call method
+c++/Java/.Net ==> create an instance ==> instace.method_name
+
+Method should be called independently
+
+API must be avialable to every application 24*7*365 ==> web[internet] ==> web-server
+ 
+Method ==> URL ==> becomes available over internet ==> web-programming
+
+http://localhost:8080/studentApp?name="ratna"&stream="IT"[HTTP - GET]
+		==> name & stream are the QueryParam
+
+http://localhost:8080/studentApp/students/101 ==> 101=PathVariable
+
+name="ratna"&stream="IT" ===> QueriString 
+
+http://localhost:8080/studentApp[HTTP - POST]
+{
+	requestBody:{name:"ratna",stream:"IT"}==> JSON-Object [Student]
+}
+
+There are two types of services[API] can be developed :
+
+
+1. SOAP WebService : XML-message <==> parse-message <==> run logic
+			XML programming are proven as error-prone == hence they are the last choice for developer. SOAP
+
+2. RESTful WebService :  HTTP
+
+	XML-message/JSON-message/Text-message/HTML-FormData <==>
+	
+	To create RESTful Web service using Spring Boot project,developer has to add spring-web dependency [default server tomcat]
+	Developer has to use REST-based annotations to convert Stand-alone spring boot application to the RESTful-spring boot application
+	
+	
+	@Controller ==> @RestController
+	@RequestBody // @PathVariable // @QueryParam
+	@requestBody / @QueryParam to read input of data
+	@PathVariable = is only used to read any URL parameter
+	
+
+====================== Steps to Build RESTful webservice ================
+
+1. Create Spring boot project
+2. add Spring-web dependency[spring-data+mysql]
+3. follow same architecture as CRUD application.
+4. Define mapping of service methods with respective URLs inside controller[RestController]
+5. Run application 
+6. Test all crud operation via browser/Postman
+
+
+lat + lon == new address
+
+
+
+
+------------------------------------------------------------------------
+
+
+RESTful webservice development follows URL-declaration standards
+
+server URL : http://localhost:8080
+
+Resource  /emps OR /employees ==> URI
+
+Read Operation : HTTP-Get ==> @GetMapping("/emps")
+
+
+One Web-Application ==> n-APIs ==> n-Method Level mapping
+
+=========================== Consuming REST-API ===========================
+
+Web-Service: are collection of Service Endpoints to perform basic CRUD operation + specific operation on resource.
+
+Resource : is an entity associated with 1 - RestAPI == 1=Table in DB
+
+Association in REST API: 
+
+Order : getOrderDetails/1987 ==> Order[date,amount,no.ofProducts [products[]]]
+
+
+RESTTemplate : a class allow consuming of REST API within Java Class
+
+Consuming REST-API /Endpoint within Java class .
+
+Till Now our REST-API
+
+ResponseEntity :  a class helps converting Java-Object to Response type[HTTP]. Advantage of doing it is a developer can customize response , configure response-type, configure HTTP-Response Status code  
+
+
+
+
+Exception Handling in RESTful Services plays a vital role to communicate actual problem/error to an end-user to give an idea about what went wrong while accessing the services.
+
+
+Postman [JSON Object]: Alpha-numeric value 
+
+SQLException ==? A kind of Error
+
+
+Exception : 1, 2, 3, 4, 5, 6  ==> It interrupts Normal flow of program/code.
+
+A Cause of Exception could be : Logical mistake, Unexpected Data input, Unexpected Data Accessibility == Programatical problem/mistake.
+
+DivideByZero = 
+
+A Developer must have an idea about possible exceptions while writing a program logic. And must handle them in user-friendly way.
+
+Error :  Caused by Runtime/External-resource/External-API
+
+
+Handle Exception in two different way:
+
+1. Handle Exception @ the place where it occurs [within the method]
+2. Declare an Exception to be handled by Calling Method.
+
+In Rest API central exception handler class can be created to handle all/any kinds of exception
+
+ExceptionHandler == @RestControllerAdvice
+
+Feature Spring 5.0  is use ResponseStatusException class which allows to handle exception within API itself.
+
+
+
+Customer == Address 
+
+1. E-Commerce : OneToMany
+2. Banking    : OneToOne
+
+
+Syntactical Architecture of project to handle exception: 
+	Clear seperation of each concerns of my enterprise application ==> RestControllerAdvice
+	
+Programatic way of handling Exception in REST API:
+	ResponseStatusException  : used to throw an exception explicitly
+
+
+Cross-Origin Resource Sharing :  While two different servers need to communicate for sharing data.
+
+
+
+Field must not kept empty == NotNull
+Email == Valid email
+dateOfBirth ==  past/present
+
 
 
 
